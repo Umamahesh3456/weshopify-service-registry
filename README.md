@@ -1,1 +1,2 @@
 # weshopify-service-registry
+personal_access_token: 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
