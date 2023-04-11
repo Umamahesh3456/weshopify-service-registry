@@ -79,7 +79,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	<distributionManagement>
+<distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
         <name>ip-192-168-22-54.ap-south-1.compute.internal-snapshots</name>
