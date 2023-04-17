@@ -1,0 +1,7 @@
+- name: weshopify-svc-registry-playbook
+  hosts: docker-host
+  become: 'yes'
+  become_user: docker-admin
+  task:
+   - name: create a app-directory
+     shell: mkdir /app-dir && chmod 777 /app-dir
