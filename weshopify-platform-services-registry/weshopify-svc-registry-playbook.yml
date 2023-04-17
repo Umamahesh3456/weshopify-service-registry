@@ -4,4 +4,4 @@
   become_user: docker-admin
   tasks:
    - name: create a app-directory
-     shell: mkdir /app-dir && chmod 777 /app-dir
+     shell: mkdir app-dir && chmod 777 app-dir
