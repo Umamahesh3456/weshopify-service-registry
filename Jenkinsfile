@@ -22,5 +22,15 @@ pipeline{
                 echo "=======Code Building is Completed==========="
             }
         }
+        stage("copy files to ansible server"){
+            steps{
+                echo "connecting to Ansible Server"
+                sshagent9['ANSIBLE_SERVER']){
+                    sh 'cd weshopify-platform-services-registry && scp Dockerfile ansible-admin@192.168.0.4:/opt/ci-cd-files'
+                    sh 'cd weshopify-platform-services-registry && scp weshopify-svc-registry-playbook.yml ansible-admin@192.168.0.4:/opt/ci-cd-files'
+                    
+                }
+            } 
+        }            
     }
 }
