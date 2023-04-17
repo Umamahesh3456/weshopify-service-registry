@@ -28,7 +28,12 @@ pipeline{
                 sshagent(['ANSIBLE_SERVER']){
                     sh 'cd weshopify-platform-services-registry && scp Dockerfile ansible-admin@192.168.0.4:/opt/ci-cd-files'
                     sh 'cd weshopify-platform-services-registry && scp weshopify-svc-registry-playbook.yml ansible-admin@192.168.0.4:/opt/ci-cd-files'
-                    
+                    sh '''
+                        ssh -tt ansible-admin@192.168.0.4 << EOF
+                             ansible-playbook /opt/ci-cd-files/weshopify-svc-registry-playbook.yml
+                             exit
+                        EOF
+                    '''                                    
                 }
             } 
         }            
