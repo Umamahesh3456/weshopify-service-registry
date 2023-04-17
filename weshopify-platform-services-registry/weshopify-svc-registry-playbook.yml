@@ -2,6 +2,6 @@
   hosts: docker-host
   become: 'yes'
   become_user: docker-admin
-  task:
+  tasks:
    - name: create a app-directory
      shell: mkdir /app-dir && chmod 777 /app-dir
